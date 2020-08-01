@@ -1,0 +1,29 @@
+.preview {
+  width: 250px;
+  height: auto;
+  align: center;
+}
+
+.displayForm{
+	text-align:center;
+}
+
+table {
+	margin: 0 auto;
+}
+
+.firstColumn {
+	text-align: right;
+	margin-left:20px;
+	width: 200px;
+}
+
+.secondColumn {
+	text-align: left;
+	margin-left:20px;
+	width: 150px;
+}
+
+.displayImage{
+	text-align:center;
+}

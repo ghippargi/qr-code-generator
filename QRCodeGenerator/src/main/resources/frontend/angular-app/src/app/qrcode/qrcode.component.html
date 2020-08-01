@@ -1,0 +1,105 @@
+<div class="displayForm">
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+  <table>
+  <tr>
+  <div class="form-group">
+    <td class="firstColumn">
+    <label>Id</label>
+    </td>
+    <td class="secondColumn">
+    <input type="text" class="form-control" name="id" [(ngModel)]="model.id" required>
+    </td>
+  </div>
+  </tr>
+
+  <tr>
+  <div class="form-group">
+    <td class="firstColumn">
+    <label>Information</label>
+    </td>
+    <td class="secondColumn">
+    <input type="text" class="form-control" name="info" [(ngModel)]="model.info">
+    </td>
+  </div>
+  </tr>
+
+  <tr>
+  <div class="form-group">
+    <td class="firstColumn">
+    <label>URL</label>
+    </td>
+    <td class="secondColumn">
+    <input type="string" class="form-control" name="url" [(ngModel)]="model.url">
+    </td>
+  </div>
+  </tr>
+  
+  <tr>
+  <div class="form-group">
+    <td class="firstColumn">
+    <label>Emergency Call Number</label>
+    </td>
+    <td class="secondColumn">
+    <input type="number" class="form-control" name="emergencyNum" [(ngModel)]="model.emergencyNum">
+    </td>
+  </div>
+  </tr>
+  
+  <tr>
+  <div class="form-group">
+    <td class="firstColumn">
+    <label>SMS Number</label>
+    </td>
+    <td class="secondColumn">
+    <input type="number" class="form-control" name="smsNum" [(ngModel)]="model.smsNum">
+    </td>
+  </div>
+  </tr>
+  
+  <tr>
+  <div class="form-group">
+    <td class="firstColumn">
+    <label>SMS Message</label>
+    </td>
+    <td class="secondColumn">
+    <input type="string" class="form-control" name="smsMsg" [(ngModel)]="model.smsMsg">
+    </td>
+  </div>
+  </tr>
+  
+  <tr>
+  <td class="firstColumn">
+  <label>Choose File</label>  
+  </td>
+  <td>       
+  <td>   
+      <div class="form-group">
+          <input type="file" name="image" (change)="fileProgress($event)" />
+      </div>
+      <div *ngIf="fileUploadProgress">
+          Upload progress: {{ fileUploadProgress }}
+      </div>
+      <div class="mb-3" *ngIf="uploadedFilePath">
+          {{uploadedFilePath}}
+      </div>
+   </td>
+  </tr>
+  <tr>
+  <div class="image-preview mb-3" *ngIf="previewUrl">
+      <img [src]="previewUrl" height="100" />                 
+  </div>
+  </tr>
+
+  <tr>
+  <div class="form-group">
+    <button class="btn btn-danger btn-block">Submit</button>
+  </div>
+  </tr>
+  </table>
+
+</form>
+</div>
+
+<div class="displayImage">
+<img *ngIf="imageUrl" class="preview" [src]='imageUrl'/>
+</div>
